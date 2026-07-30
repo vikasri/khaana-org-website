@@ -91,8 +91,19 @@ p { margin: 0 0 1.1em; }
 .page-head p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 640px; }
 
 /* ---------- Sections ---------- */
-section { padding: 48px 0; }
+section { padding: 48px 0; scroll-margin-top: 84px; }
 section.tight { padding: 28px 0; }
+section.band-paper { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 10px;
+}
+section p.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 640px; }
 
 /* ---------- Spelling breakdown ---------- */
 .breakdown {
