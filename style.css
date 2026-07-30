@@ -22,6 +22,8 @@ body {
   color: var(--ink);
   background: var(--cream);
   line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 img { max-width: 100%; display: block; }
@@ -257,4 +259,33 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
 @media (max-width: 640px) {
   .word-display .dev { font-size: 2.2rem; }
   .word-display .translit { font-size: 1.2rem; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 560px) {
+  .container, .container-wide { padding: 0 18px; }
+  section { padding: 40px 0; scroll-margin-top: 70px; }
+  .page-head { padding: 38px 0 30px; }
+  .nav-wrap { padding: 14px 18px; }
+  .brand { font-size: 1.25rem; }
+  .brand span { display: block; margin-left: 0; margin-top: 2px; }
+
+  .page-head p.lede, section p.lede { font-size: 1.06rem; }
+
+  /* Spelling breakdown: tighter so kha + a + n + a fits comfortably */
+  .breakdown { gap: 10px; padding: 20px 12px; }
+  .breakdown-piece .en { font-size: 1rem; padding: 5px 11px; }
+  .breakdown-piece .dev { font-size: 1.45rem; }
+  .breakdown-result { font-size: 1.6rem; }
+
+  .callout, .example { padding: 16px 18px; }
+
+  /* Tables: smaller cells; they still scroll sideways inside .table-wrap */
+  table { font-size: 0.9rem; }
+  th, td { padding: 9px 10px; }
+  td.dev { font-size: 1rem; }
+
+  .cta-panel { padding: 24px 20px; }
+
+  .site-footer .container-wide { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
