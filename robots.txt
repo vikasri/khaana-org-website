@@ -1,0 +1,7 @@
+# khaana.org
+# One page, nothing to keep out. This file exists mainly so the sitemap has a
+# declared home: Google finds it here without being told in Search Console.
+User-agent: *
+Allow: /
+
+Sitemap: https://khaana.org/sitemap.xml
