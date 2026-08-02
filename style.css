@@ -289,3 +289,53 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
 
   .site-footer .container-wide { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
+
+
+/* ---------- through to the recipes ----------
+   The same button khaana.com uses for its primary action, so the two sites
+   read as one family. The light stop of the gradient is #2563eb because the
+   hover brightens by 8% and it is the hovered colour that has to clear AA:
+   5.17:1 at rest, 4.54:1 hovered. */
+.cook-cta-wrap {
+  margin: 26px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.cook-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 38px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #0847a6);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(8, 71, 166, 0.34);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+.cook-cta:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 32px rgba(8, 71, 166, 0.42);
+}
+.cook-cta-label { letter-spacing: 0.01em; }
+.cook-cta-arrow { font-size: 1.15em; }
+.cook-cta-note {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  max-width: 44ch;
+  line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+  /* Full width and a 48px target on a phone, like every other control. */
+  .cook-cta { width: 100%; justify-content: center; padding: 16px 24px; font-size: 1.1rem; }
+  .cook-cta-note { font-size: 0.85rem; }
+}
