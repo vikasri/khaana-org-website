@@ -339,3 +339,58 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
   .cook-cta { width: 100%; justify-content: center; padding: 16px 24px; font-size: 1.1rem; }
   .cook-cta-note { font-size: 0.85rem; }
 }
+
+/* ---------- Regional cuisines ---------- */
+/* Twenty-one doors through to Khaana.com. Pictures rather than a list of
+   names, because a reader who does not know Awadhi from Chettinad recognises
+   the food long before the label. */
+.cuisines-band {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 44px 0 48px;
+}
+.cuisines-intro { color: var(--ink-soft); max-width: 60ch; margin: 0 0 22px; }
+
+.cuisine-grid {
+  display: grid;
+  /* auto-fill rather than auto-fit: with 21 tiles the last row is short, and
+     auto-fit would stretch two lonely tiles across the whole width. */
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: 10px;
+}
+.cuisine-tile {
+  display: block; position: relative;
+  border-radius: var(--radius); overflow: hidden;
+  background: var(--ink); box-shadow: var(--shadow);
+  transition: transform 0.15s ease;
+}
+.cuisine-tile img {
+  display: block; width: 100%; height: auto; aspect-ratio: 3 / 2;
+  object-fit: cover;
+  /* Dimmed so the label stays readable over whatever the photograph is
+     doing, and brought back up on hover. */
+  filter: brightness(0.74);
+  transition: filter 0.15s ease, transform 0.3s ease;
+}
+.cuisine-tile span {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 6px 7px;
+  font-weight: 700; font-size: 0.74rem; line-height: 1.2; color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.55);
+}
+.cuisine-tile:hover { transform: translateY(-3px); text-decoration: none; }
+.cuisine-tile:hover img { filter: brightness(0.92); transform: scale(1.04); }
+.cuisine-tile:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.cuisines-credit { margin: 20px 0 0; font-size: 0.82rem; color: var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cuisine-tile, .cuisine-tile img { transition: none; }
+  .cuisine-tile:hover { transform: none; }
+  .cuisine-tile:hover img { transform: none; }
+}
+@media (max-width: 640px) {
+  .cuisine-grid { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+  .cuisine-tile span { font-size: 0.68rem; padding: 5px 6px; }
+}
