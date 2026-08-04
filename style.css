@@ -400,3 +400,16 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
 @media (max-width: 640px) {
   .cuisine-tile span { font-size: 0.68rem; padding: 5px 6px; }
 }
+
+/* The two buttons sit side by side and wrap together on a narrow screen. */
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* Food Fun Facts. Purple so it cannot be mistaken for the recipes button
+   beside it or for the orange the rest of the site uses on links. Same
+   contrast test as the blue one: hover brightens by 8%, so it is the hovered
+   colour that has to clear AA — 7.10:1 at rest, 6.38:1 hovered. */
+.cook-cta-fun {
+  background: linear-gradient(135deg, #6d28d9, #4c1d95);
+  box-shadow: 0 8px 22px rgba(76, 29, 149, 0.34);
+}
+.cook-cta-fun:hover { box-shadow: 0 14px 32px rgba(76, 29, 149, 0.42); }
