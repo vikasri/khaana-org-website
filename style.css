@@ -404,12 +404,18 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
 /* The two buttons sit side by side and wrap together on a narrow screen. */
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
-/* Food Fun Facts. Purple so it cannot be mistaken for the recipes button
-   beside it or for the orange the rest of the site uses on links. Same
-   contrast test as the blue one: hover brightens by 8%, so it is the hovered
-   colour that has to clear AA — 7.10:1 at rest, 6.38:1 hovered. */
+/* Food Fun Facts, in bright green.
+   The text is dark rather than white, and that is not a style choice. A green
+   bright enough to read as bright leaves white text at about 2:1, nowhere near
+   the 4.5 AA needs — #22c55e hovered measures 1.97:1 against white. Dark green
+   text gives 5.41:1 on the darkest stop of this gradient and 8.9:1 on the
+   lightest, so the
+   button stays as bright as asked for and is still readable. Hover brightens
+   by 8% as it does on the blue button, which here improves contrast rather
+   than eroding it. */
 .cook-cta-fun {
-  background: linear-gradient(135deg, #6d28d9, #4c1d95);
-  box-shadow: 0 8px 22px rgba(76, 29, 149, 0.34);
+  background: linear-gradient(135deg, #4ae07a, #1cb85c);
+  color: #0b2e17;
+  box-shadow: 0 8px 22px rgba(28, 184, 92, 0.34);
 }
-.cook-cta-fun:hover { box-shadow: 0 14px 32px rgba(76, 29, 149, 0.42); }
+.cook-cta-fun:hover { color: #0b2e17; box-shadow: 0 14px 32px rgba(28, 184, 92, 0.42); }
