@@ -354,9 +354,11 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
 
 .cuisine-grid {
   display: grid;
-  /* auto-fill rather than auto-fit: with 21 tiles the last row is short, and
-     auto-fit would stretch two lonely tiles across the whole width. */
-  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  /* Fixed columns, not auto-fill. Twenty-one divides evenly by seven and by
+     three and by nothing else useful, so those are the only two counts that
+     do not leave a ragged last row. Seven across on a desktop, three on a
+     phone: three complete rows either way. */
+  grid-template-columns: repeat(7, 1fr);
   gap: 10px;
 }
 .cuisine-tile {
@@ -390,7 +392,11 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
   .cuisine-tile:hover { transform: none; }
   .cuisine-tile:hover img { transform: none; }
 }
+/* Below this seven columns puts the tiles under about 100px and the labels
+   start breaking mid-word. Three keeps the grid even. */
+@media (max-width: 820px) {
+  .cuisine-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+}
 @media (max-width: 640px) {
-  .cuisine-grid { grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
   .cuisine-tile span { font-size: 0.68rem; padding: 5px 6px; }
 }
