@@ -419,3 +419,13 @@ td.muted { color: var(--ink-soft); font-size: 0.9rem; }
   box-shadow: 0 8px 22px rgba(28, 184, 92, 0.34);
 }
 .cook-cta-fun:hover { color: #0b2e17; box-shadow: 0 14px 32px rgba(28, 184, 92, 0.42); }
+
+/* Healthy Indian Recipes, in the site's terracotta.
+   Not --accent itself: #e8590c carries white text at 3.58:1, under the 4.5 AA
+   wants, and the 8% hover brightening takes it to 3.33. This gradient runs
+   from #c2410c at 5.18:1 to #9a2d08 at 7.63, and still clears AA hovered. */
+.cook-cta-healthy {
+  background: linear-gradient(135deg, #c2410c, #9a2d08);
+  box-shadow: 0 8px 22px rgba(154, 45, 8, 0.34);
+}
+.cook-cta-healthy:hover { box-shadow: 0 14px 32px rgba(154, 45, 8, 0.42); }
